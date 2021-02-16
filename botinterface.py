@@ -20,7 +20,14 @@ def send(text):
 # Возвращает команду, если есть; если
 # нет, то возвращает None
 def get_command():
-	return input()
+	try:
+		s = ''
+		while s == '':
+			s = input()
+		#  print('input:', s)
+		return s
+	except EOFError:
+		return None
 
 
 

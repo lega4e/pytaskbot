@@ -8,6 +8,14 @@
 # 
 
 from notice import Notice
+from sortedcontainers import SortedSet
+
+
+
+
+
+# objects
+storage = SortedSet();
 
 
 
@@ -15,19 +23,24 @@ from notice import Notice
 
 # Добавление нового уведомления
 def push(notice):
-	pass
+	global storage
+	storage.add(notice)
+	return
 
 
 
 # Удаление существующего уведомления
 def remove(notice):
-	pass
+	global storage
+	storage.remove(notice)
+	return
 
 
 
 # Итерируемый объект по уведомлениям
 def iter():
-	pass
+	global storage
+	return storage
 
 
 
